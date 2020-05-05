@@ -16,6 +16,8 @@ app.use("/demosql", require("./routes/demosql.js"));
 app.use("/auth", require("./routes/register.js"));
 
 app.use("/auth", require("./routes/login.js"));
+
+app.use("/doc", express.static("apidoc"));
 // app.get("/hello", (request, response) => {
 //   response.send({
 //     message: "Hello, you sent a GET request",
