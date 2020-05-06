@@ -53,6 +53,13 @@ app.get("/", (request, response) => {
  */
 app.use("/doc", express.static("apidoc"));
 
+app.get("/wait", (request, response) => {
+  setTimeout(() => {
+    response.send({
+      message: "Thanks for waiting",
+    });
+  }, 5000);
+});
 /*
  * Heroku will assign a port you can use via the 'PORT' environment variable
  * To accesss an environment variable, use process.env.<ENV>
