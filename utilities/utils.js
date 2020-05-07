@@ -23,4 +23,10 @@ function getHash(pw, salt) {
     .digest("hex");
 }
 
-module.exports = { pool, getHash, sendEmail };
+let messaging = require("./pushy_utilities.js");
+module.exports = {
+  pool,
+  getHash,
+  sendEmail,
+  messaging,
+};

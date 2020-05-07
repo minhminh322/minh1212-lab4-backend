@@ -21,6 +21,12 @@ app.use("/auth", require("./routes/login.js"));
 
 app.use("/phish", middleware.checkToken, require("./routes/phish.js"));
 
+app.use("/messages", middleware.checkToken, require("./routes/messages.js"));
+
+app.use("/chats", middleware.checkToken, require("./routes/chats.js"));
+
+app.use("/auth", middleware.checkToken, require("./routes/pushyregister.js"));
+
 /*
  * This middleware function will respond to inproperly formed JSON in
  * request parameters.
@@ -74,3 +80,5 @@ app.get("/wait", (request, response) => {
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server up and running on port: " + (process.env.PORT || 5000));
 });
+
+// Fix Datbase: PATH="/Library/PostgreSQL/12/bin:$PATH"
