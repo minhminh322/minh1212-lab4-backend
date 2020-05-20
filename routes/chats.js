@@ -94,7 +94,7 @@ router.post(
  */
 
 router.put(
-  "/:chatId?/",
+  "/:chatId/",
   (request, response, next) => {
     //validate on empty parameters
     if (!request.params.chatId) {
@@ -225,7 +225,7 @@ router.put(
  */
 
 router.get(
-  "/:chatId?",
+  "/:chatId",
   (request, response, next) => {
     //validate on missing or invalid (type) parameters
     if (!request.params.chatId) {
@@ -312,7 +312,7 @@ router.get(
  */
 
 router.delete(
-  "/:chatId?/:email?",
+  "/:chatId/:email",
   (request, response, next) => {
     //validate on empty parameters
     if (!request.params.chatId || !request.params.email) {
